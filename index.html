@@ -37,55 +37,67 @@
         <h3 class="title features__main-title">How Urlaubsglück works?</h3>
 
         <div class="features__wraper">
-          <article class="features__item features__item--step1">
-            <p class="button features__button">step 1</p>
-            <h3 class="title features__title">
-              Sed leo enim, <br />
-              condimentum
-            </h3>
-            <p class="text features__text">
-              Quisque libero libero, dictum non turpis in,<br />
-              luctus semper lorem. Donec rhoncus a leo<br />
-              sit amet facilisis.
-            </p>
-            <!-- <div class="button-slide">
-              <button type="button" class="button-slide--next"></button>
-              <button type="button" class="button-slide--prev"></button>
-            </div> -->
-          </article>
+          <div class="slider__container">
+            <ul class="slider__list" data-current="0">
+              <li class="slider__item">
+                <div class="features__item features__item--step1">
+                  <p class="button features__button">step 1</p>
+                  <h3 class="title features__title">
+                    Sed leo enim, <br />
+                    condimentum
+                  </h3>
+                  <p class="text features__text">
+                    Quisque libero libero, dictum non turpis in,<br />
+                    luctus semper lorem. Donec rhoncus a leo<br />
+                    sit amet facilisis.
+                  </p>
+                  <!-- <div class="button-slide">
+                    <button type="button" class="button-slide--next"></button>
+                    <button type="button" class="button-slide--prev"></button>
+                  </div> -->
+                </div>
+              </li>
 
-          <article class="features__item features__item--step2">
-            <p class="button features__button">step 2</p>
-            <h3 class="title features__title">
-              Morbi velit risus
-            </h3>
-            <p class="text features__text">
-              Nulla venenatis tempor dui in molestie.<br />
-              Nulla quis dictum purus, sit amet porttitor <br />
-              est.
-            </p>
-            <!-- <div class="button-slide">
-              <button type="button" class="button-slide--next"></button>
-              <button type="button" class="button-slide--prev"></button>
-            </div> -->
-          </article>
+              <li class="slider__item">
+                <div class="features__item features__item--step2">
+                  <p class="button features__button">step 2</p>
+                  <h3 class="title features__title">
+                    Morbi velit risus
+                  </h3>
+                  <p class="text features__text">
+                    Nulla venenatis tempor dui in molestie.<br />
+                    Nulla quis dictum purus, sit amet porttitor <br />
+                    est.
+                  </p>
+                  <!-- <div class="button-slide">
+                    <button type="button" class="button-slide--next"></button>
+                    <button type="button" class="button-slide--prev"></button>
+                  </div> -->
+                </div>
+              </li>
 
-          <article class="features__item features__item--step3">
-            <p class="button features__button">step 3</p>
-            <h3 class="title features__title">
-              Sed leo enim, <br />
-              condimentum
-            </h3>
-            <p class="text features__text">
-              Quisque libero libero, dictum non turpis in,<br />
-              luctus semper lorem. Donec rhoncus a leo<br />
-              sit amet facilisis.
-            </p>
-            <!-- <div class="button-slide">
-              <button type="button" class="button-slide--next"></button>
-              <button type="button" class="button-slide--prev"></button>
-            </div> -->
-          </article>
+              <li class="slider__item">
+                <div class="features__item features__item--step3">
+                  <p class="button features__button">step 3</p>
+                  <h3 class="title features__title">
+                    Sed leo enim, <br />
+                    condimentum
+                  </h3>
+                  <p class="text features__text">
+                    Quisque libero libero, dictum non turpis in,<br />
+                    luctus semper lorem. Donec rhoncus a leo<br />
+                    sit amet facilisis.
+                  </p>
+                  <!-- <div class="button-slide">
+                    <button type="button" class="button-slide--next"></button>
+                    <button type="button" class="button-slide--prev"></button>
+                  </div> -->
+                </div>
+              </li>
+            </ul>
+            <button class="slider__arrows-prev_slide" id="prev_slide"></button>
+            <button class="slider__arrows-next_slide" id="next_slide"></button>
+          </div>
         </div>
       </section>
 
@@ -244,5 +256,50 @@
         </div>
       </section>
     </footer>
+    <script>
+      var slideWidth = 300;
+      var sliderList = document.querySelector(".slider__list");
+      var slides = document.querySelectorAll(".slider__item");
+      var btnPrev = document.querySelector("#prev_slide");
+      var btnNext = document.querySelector("#next_slide");
+      var pos = 0;
+
+      sliderList.style.width = slides.length * slideWidth + "px";
+
+      btnPrev.onclick = scrollToPrev;
+      btnNext.onclick = scrollToNext;
+
+      function scrollToPrev() {
+        pos--;
+
+        if (pos < 0) {
+          var children = sliderList.children;
+          sliderList.style.transition = null;
+          sliderList.style.left = -(pos + 2) * slideWidth + "px";
+          sliderList.insertBefore(children[slides.length - 1], children[0]);
+          children[0].offsetParent;
+          pos++;
+        }
+
+        sliderList.style.transition = "left 0.6s ease-in-out";
+        sliderList.style.left = -(slideWidth * pos) + "px";
+      }
+
+      function scrollToNext() {
+        pos++;
+
+        if (pos > slides.length - 1) {
+          sliderList.style.left = -(pos - 2) * slideWidth + "px";
+          var cloneElem = sliderList.children[0].cloneNode(true);
+          sliderList.appendChild(cloneElem);
+          sliderList.removeChild(sliderList.children[0]);
+          pos--;
+          console.log(pos);
+        }
+
+        sliderList.style.left = -(slideWidth * pos) + "px";
+        sliderList.style.transition = "left 0.6s ease-in-out";
+      }
+    </script>
   </body>
 </html>

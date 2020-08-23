@@ -104,7 +104,7 @@
 .features__wraper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .features__item {
@@ -400,6 +400,93 @@
 
   padding-bottom: 10px;
 }
+.slider {
+  width: 400px;
+  margin: 50px auto;
+}
+
+.slider__container {
+  position: relative;
+  width: 300px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.slider__list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  padding: 0;
+  height: 600px;
+  list-style: none;
+}
+
+.slider__item {
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  height: 400px;
+  box-sizing: border-box;
+  background-color: #eee;
+}
+
+.slider__arrows-prev_slide {
+  border-radius: 3px;
+  cursor: pointer;
+  /* border: none; */
+  /* outline: none; */
+}
+
+button {
+  width: 45px;
+  height: 45px;
+  /* background-color: transparent; */
+}
+
+.slider__arrows-prev_slide:before,
+.slider__arrows-prev_slide:after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 27px;
+  background: rgba(255, 255, 255, 0.5);
+  top: 40%;
+  left: 0%;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.slider__arrows-next_slide:before,
+.slider__arrows-next_slide:after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 27px;
+  background: rgba(255, 255, 255, 0.5);
+  top: 40%;
+  left: 95%;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.slider__arrows-next_slide:before {
+  transform-origin: 100% 100%;
+  transform: translate(-75%, -50%) rotate(45deg);
+}
+.slider__arrows-next_slide:after {
+  transform-origin: 100% 0%;
+  transform: translate(-75%, -50%) rotate(-45deg);
+}
+.slider__arrows-prev_slide:before {
+  transform-origin: 100% 100%;
+  transform: translate(-75%, -100%) rotate(135deg);
+}
+.slider__arrows-prev_slide:after {
+  transform-origin: 100% 0%;
+  transform: translate(-75%, 20%) rotate(-135deg);
+}
 
 @media (max-width: 768px) {
   .header {
@@ -417,6 +504,15 @@
   }
   .ideas__item {
     min-width: 236px;
+  }
+  .slider__container {
+    width: 236px;
+  }
+  .slider__item {
+    width: 300px;
+  }
+  .slider {
+    width: 472px;
   }
 }
 
@@ -444,6 +540,17 @@
     min-width: 300px;
     min-height: 240px;
     margin-bottom: 10px;
+  }
+
+  .slider__container {
+    width: 300px;
+    height: 240px;
+  }
+  .slider__item {
+    width: 300px;
+  }
+  .slider {
+    width: 472px;
   }
 
   .features__main-title {
