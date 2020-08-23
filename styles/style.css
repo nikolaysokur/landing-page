@@ -2,7 +2,7 @@
   max-width: 1440px;
   min-height: 700px;
   background-color: #1a1915;
-  background-image: url(/images/header-image.png);
+  background-image: url(../images/header-image.png);
   background-repeat: no-repeat;
   background-position: center;
   margin: auto;
@@ -148,7 +148,7 @@
 
 .features__item--step1 {
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent),
-    url(/images/slide-1.png);
+    url(../images/slide-1.png);
   background-position: center;
   background-repeat: no-repeat;
   background-color: #ff8523;
@@ -156,7 +156,7 @@
 
 .features__item--step2 {
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent),
-    url(/images/slide-2.png);
+    url(../images/slide-2.png);
   background-position: center;
   background-repeat: no-repeat;
   background-color: #ff8523;
@@ -164,7 +164,7 @@
 
 .features__item--step3 {
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent),
-    url(/images/slide-3.png);
+    url(../images/slide-3.png);
   background-position: center;
   background-repeat: no-repeat;
   background-color: #ff8523;
@@ -273,34 +273,34 @@
   justify-content: center;
 }
 .ideas__item--activity {
-  background-image: url(/images/activity.png);
+  background-image: url(../images/activity.png);
 }
 .ideas__item--helth {
-  background-image: url(/images/health.png);
+  background-image: url(../images/health.png);
 }
 .ideas__item--extreme {
-  background-image: url(/images/extreme.png);
+  background-image: url(../images/extreme.png);
   background-position: right;
 }
 .ideas__item--games {
-  background-image: url(/images/games.png);
+  background-image: url(../images/games.png);
 }
 .ideas__item--culture {
-  background-image: url(/images/culture.png);
+  background-image: url(../images/culture.png);
   min-width: 400px;
   flex-grow: 1;
   margin-left: 20px;
 }
 
 .ideas__item--relaxation {
-  background-image: url(/images/relaxation.png);
+  background-image: url(../images/relaxation.png);
   min-width: 400px;
   flex-grow: 1;
   margin-right: 20px;
 }
 
 .ideas__item--traveling {
-  background-image: url(/images/traveling.png);
+  background-image: url(../images/traveling.png);
   background-position: right;
 }
 
@@ -586,9 +586,6 @@ button {
     flex-grow: 0;
   }
 
-  .feed-back {
-  }
-
   .feed-back__set-email {
     display: flex;
     flex-direction: column;
@@ -598,7 +595,6 @@ button {
     min-width: 265px;
     padding: 10px 0px 10px 15px;
     margin-bottom: 10px;
-    text-align: ;
   }
   .button--email {
     min-width: 280px;
